@@ -1,4 +1,5 @@
 #include "settings.h"
+#include "tile.h"
 
 #include <cstdio>
 #include <ctime>
@@ -54,6 +55,13 @@ int main( int argc, char *args[] )
     }
  Flip_Buffers(screen);
  //static_screen=screen;
+
+ Load_all_tiles();
+ Tile test;
+ test.Set(1,0);
+ test.Print(0,0,screen);
+ Flip_Buffers(screen);
+ SDL_Delay(100000);
 
  return 0;
 }

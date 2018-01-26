@@ -125,6 +125,37 @@ Texture *Create_Transparent_Texture(int w,int h)
  return _texture;
 }
 
+void Apply_Rotated_Texture(int x,int y,double angle,Texture *source,Texture *destination)
+{
+ if(source==NULL || source->image==NULL)
+    return;
+ SDL_Rect *offset;
+ offset=new SDL_Rect;
+ offset->x=x;
+ offset->y=y;
+ offset->w=source->w;
+ offset->h=source->h;
+
+ SDL_LockMutex(RENDERER_MUTEX);
+ if(destination->image!=NULL)
+    {
+     SDL_SetRenderTarget(RENDERER,destination->image);
+    }
+ SDL_Point aux;
+ aux.x=offset->w/2;
+ aux.y=offset->h/2;
+ SDL_RenderCopyEx(RENDERER,source->image,NULL,offset,angle,&aux,SDL_FLIP_NONE);
+ if(destination->image!=NULL)
+    {
+     SDL_SetRenderTarget(RENDERER,NULL);
+    }
+ SDL_UnlockMutex(RENDERER_MUTEX);
+
+ delete offset;
+ if(destination==SCREEN)
+    Apply_Texture(x,y,source,last_frame);
+}
+
 void Apply_Texture(int x,int y,Texture *source,Texture *destination)
 {
  if(source==NULL || source->image==NULL)

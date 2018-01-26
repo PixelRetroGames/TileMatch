@@ -15,6 +15,8 @@ Texture *Load_Transparent_Texture(char *filename);
 Texture *Create_TTF_Texture(TTF_Font *font,std::string text,SDL_Color color);
 Texture *Create_Transparent_Texture(int w,int h);
 
+void Apply_Rotated_Texture(int x,int y,double angle,Texture *source,Texture *destination=NULL);
+
 void Apply_Texture(int x,int y,Texture *source,Texture *destination=NULL);
 void Apply_Texture(int x,int y,int w,int h,Texture *source,Texture *destination=NULL);
 void Apply_Texture(int xImage,int yImage,int xScreen,int yScreen,int w,int h,Texture *source,Texture *destination=NULL);
