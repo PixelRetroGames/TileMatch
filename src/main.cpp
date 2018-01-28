@@ -1,6 +1,8 @@
 #include "settings.h"
-#include "tile.h"
-
+#include "controller.h"
+#include "game.h"
+#include "menu.h"
+#include "stage.h"
 #include <cstdio>
 #include <ctime>
 #include <cstdlib>
@@ -55,13 +57,12 @@ int main( int argc, char *args[] )
     }
  Flip_Buffers(screen);
  //static_screen=screen;
-
+ Init_Controllers();
  Load_all_tiles();
- Tile test;
- test.Set(1,0);
- test.Print(0,0,screen);
- Flip_Buffers(screen);
- SDL_Delay(100000);
-
+ Load_Matching_Effects();
+ Load_cursor();
+ Game game;
+ game.Load();
+ game.Start(screen);
  return 0;
 }

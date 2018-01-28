@@ -37,14 +37,20 @@
 			<Add directory="./lib" />
 		</Linker>
 		<Unit filename="include/errors.h" />
+		<Unit filename="include/game.h" />
+		<Unit filename="include/level.h" />
 		<Unit filename="include/library.h" />
 		<Unit filename="include/settings.h" />
 		<Unit filename="include/texture.h" />
+		<Unit filename="include/tile.h" />
 		<Unit filename="src/errors.cpp" />
+		<Unit filename="src/game.cpp" />
+		<Unit filename="src/level.cpp" />
 		<Unit filename="src/library.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/settings.cpp" />
 		<Unit filename="src/texture.cpp" />
+		<Unit filename="src/tile.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

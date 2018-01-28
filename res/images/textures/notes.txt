@@ -1,0 +1,7 @@
+cerc cu surub: surub > circle(id)
+cerc fara surub: no_surub > circle(id)
+cerc cu highlight: highlight > circle(id) > light
+
+forcefield stuff:
+forcefield start just once
+after that forcefield normmal looped
